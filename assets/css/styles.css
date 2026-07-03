@@ -5,29 +5,32 @@
 }
 
 :root {
-  --bg: #f7f6f3;
-  --bg-alt: #efede8;
-  --surface: #ffffff;
-  --text: #1a1a1a;
-  --text-muted: #6b6b6b;
-  --text-light: #999;
-  --accent: #3d5a4c;
-  --accent-hover: #2d4439;
-  --accent-light: #e8efe9;
-  --border: #e2e0db;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.08), 0 16px 48px rgba(0, 0, 0, 0.06);
+  --bg: #0f0f12;
+  --bg-alt: #16161b;
+  --surface: #1c1c22;
+  --surface-hover: #24242c;
+  --text: #ececf0;
+  --text-muted: #9494a3;
+  --text-light: #636372;
+  --accent: #8a7da8;
+  --accent-hover: #9d8fbd;
+  --accent-light: rgba(138, 125, 168, 0.12);
+  --text-on-accent: #f4f2f7;
+  --border: #2a2a32;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.35), 0 16px 48px rgba(0, 0, 0, 0.25);
   --radius: 12px;
   --radius-lg: 20px;
   --header-h: 72px;
-  --font: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Instrument Serif', Georgia, serif;
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Syne', system-ui, sans-serif;
   --transition: 0.25s ease;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-h);
+  color-scheme: dark;
 }
 
 body {
@@ -66,7 +69,7 @@ a {
   right: 0;
   z-index: 100;
   height: var(--header-h);
-  background: rgba(247, 246, 243, 0.85);
+  background: rgba(15, 15, 18, 0.82);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -123,7 +126,7 @@ a {
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--surface);
+  color: var(--text-on-accent);
   background: var(--accent);
   border-radius: 100px;
   transition: background var(--transition), transform var(--transition);
@@ -192,14 +195,15 @@ a {
 .hero__title {
   font-family: var(--font-display);
   font-size: clamp(40px, 5vw, 64px);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
   margin-bottom: 24px;
 }
 
 .hero__title em {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 700;
   color: var(--accent);
 }
 
@@ -228,7 +232,7 @@ a {
 }
 
 .btn--primary {
-  color: var(--surface);
+  color: var(--text-on-accent);
   background: var(--accent);
 }
 
@@ -266,7 +270,7 @@ a {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   pointer-events: none;
 }
 
@@ -304,8 +308,8 @@ a {
 .section__title {
   font-family: var(--font-display);
   font-size: clamp(32px, 4vw, 44px);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   margin-bottom: 12px;
 }
 
@@ -335,6 +339,7 @@ a {
 
 .skill-card:hover {
   border-color: var(--accent);
+  background: var(--surface-hover);
   box-shadow: var(--shadow);
   transform: translateY(-4px);
 }
@@ -386,6 +391,7 @@ a {
 
 .work-card:hover {
   border-color: var(--accent);
+  background: var(--surface-hover);
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
 }
@@ -448,6 +454,7 @@ a {
 
 .experience-card:hover {
   border-color: var(--accent);
+  background: var(--surface-hover);
   box-shadow: var(--shadow);
 }
 
@@ -469,6 +476,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  border-radius: 6px;
 }
 
 .experience-card__content {
@@ -671,7 +679,7 @@ a {
     flex-direction: column;
     gap: 0;
     padding: 16px 24px 24px;
-    background: rgba(247, 246, 243, 0.97);
+    background: rgba(15, 15, 18, 0.97);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     transform: translateY(-100%);
