@@ -610,9 +610,13 @@ a {
 }
 
 .store-link img {
+  display: block;
   width: 22px;
   height: 22px;
+  max-width: 22px;
+  max-height: 22px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .store-link:hover {
