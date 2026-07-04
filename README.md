@@ -16,11 +16,10 @@ Site pessoal de Felipe Martelo, com portfolio interativo (Godot Web) como entrad
 
 | Visitante | Destino |
 |---|---|
-| Desktop (primeira visita) | `/game/` |
-| Celular / touch | `/site/` |
-| Escolheu "site tradicional" | `/site/` (salvo no `localStorage`) |
-| Link com `?game=1` | `/game/` |
-| Link com `?site=1` | `/site/` |
+| Desktop (raiz `/`) | `/game/` |
+| Celular / touch (raiz `/`) | `/site/` |
+| `/?site=1` | `/site/` |
+| `/?game=1` | `/game/` (forçar jogo, ex. teste no celular) |
 
 ## Publicar o jogo
 

@@ -33,6 +33,18 @@
         return;
       }
 
+      if (params.get("game") === "1") {
+        window.location.replace("/game/");
+        return;
+      }
+
+      var isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
+
+      if (isMobile) {
+        window.location.replace("/site/");
+        return;
+      }
+
       window.location.replace("/game/");
     })();
   </script>
