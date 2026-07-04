@@ -9,7 +9,7 @@
 
   function onScroll() {
     if (header) {
-      header.classList.toggle('game-hud--scrolled', window.scrollY > 16);
+      header.classList.toggle('header--scrolled', window.scrollY > 16);
     }
 
     var scrollPos = window.scrollY + 120;
