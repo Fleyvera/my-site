@@ -183,6 +183,10 @@ a {
   image-rendering: pixelated;
 }
 
+.header__logo-face {
+  flex-shrink: 0;
+}
+
 .header__nav {
   display: flex;
   gap: 4px;
@@ -351,13 +355,49 @@ a {
   transform-origin: bottom center;
 }
 
-.char-card__world .sprite {
+.char-card__avatar {
   position: absolute;
   bottom: 6px;
   left: 50%;
+  z-index: 1;
+  width: 98px;
+  height: 147px;
+  margin-left: -49px;
+}
+
+.char-card__sprite {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
   margin-left: -7px;
   transform: scale(7);
-  z-index: 1;
+  animation: sprite-idle 1.6s steps(4) infinite, avatar-swap-sprite 8s ease-in-out infinite;
+}
+
+.char-card__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  border: var(--border-w) solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 rgba(46, 36, 51, 0.85);
+  opacity: 0;
+  animation: avatar-swap-photo 8s ease-in-out infinite;
+}
+
+@keyframes avatar-swap-photo {
+  0%, 42% { opacity: 0; }
+  50%, 92% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes avatar-swap-sprite {
+  0%, 42% { opacity: 1; }
+  50%, 92% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .sprite--idle {
@@ -552,6 +592,16 @@ a {
   overflow: hidden;
 }
 
+.skill-card__icon img,
+.work-card__icon img,
+.contact-info__icon,
+.social-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
 .xp-bar span {
   display: block;
   height: 100%;
@@ -559,6 +609,14 @@ a {
     90deg,
     var(--teal) 0 6px,
     var(--teal-dark) 6px 8px
+  );
+}
+
+.xp-bar--max span {
+  background: repeating-linear-gradient(
+    90deg,
+    var(--yellow) 0 6px,
+    #c99a2e 6px 8px
   );
 }
 
@@ -924,7 +982,13 @@ a {
     height: 200px;
   }
 
-  .char-card__world .sprite {
+  .char-card__avatar {
+    width: 84px;
+    height: 126px;
+    margin-left: -42px;
+  }
+
+  .char-card__sprite {
     transform: scale(6);
   }
 

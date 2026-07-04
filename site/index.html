@@ -6,7 +6,8 @@
   <meta name="description" content="Felipe Martelo — Game Developer, Professor de Game Dev & UX/UI, artista digital. Jogos, interfaces e pixel art.">
   <meta name="theme-color" content="#f7efdf">
   <title>Felipe Martelo — Game Dev & Artist</title>
-  <link rel="icon" href="/assets/img/MeIcon.png" type="image/png">
+  <link rel="icon" href="/assets/img/meforyoume-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/meforyoume-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#home" class="header__logo">
-        <img src="/assets/img/MeIcon.png" alt="" width="36" height="36" class="pixelated">
+        <img src="/assets/img/meforyoume-icon.png" alt="" width="32" height="32" class="header__logo-face">
         <span>Felipe Martelo</span>
       </a>
       <nav class="header__nav" id="nav" aria-label="Navegação principal">
@@ -65,7 +66,10 @@
             <span class="char-card__tag">Player 1</span>
             <div class="char-card__world">
               <div class="pixel-tree pixel-tree--pine" aria-hidden="true"></div>
-              <div class="sprite sprite--idle" aria-label="Sprite pixel art de Felipe Martelo"></div>
+              <div class="char-card__avatar">
+                <div class="sprite char-card__sprite" aria-hidden="true"></div>
+                <img src="/assets/img/Eu.png" alt="Felipe Martelo" class="char-card__photo" width="98" height="147">
+              </div>
               <div class="pixel-tree pixel-tree--cherry" aria-hidden="true"></div>
             </div>
             <div class="char-card__ground" aria-hidden="true"></div>
@@ -88,43 +92,43 @@
         <div class="skills-grid">
           <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="skill-card">
             <div class="skill-card__icon">
-              <img src="/assets/icons/icon-game-dev.svg" alt="">
+              <img src="/assets/icons/pixel/gamepad.svg" alt="">
             </div>
             <h3>Game Dev</h3>
             <p>Jogos indie do conceito ao build</p>
-            <span class="xp-bar" aria-hidden="true"><span style="width: 92%"></span></span>
+            <span class="xp-bar xp-bar--max" aria-hidden="true"><span style="width: 100%"></span></span>
           </a>
           <a href="#experience" class="skill-card">
             <div class="skill-card__icon">
-              <img src="/assets/icons/icon-ux-ui.svg" alt="">
+              <img src="/assets/icons/pixel/window-frame.svg" alt="">
             </div>
             <h3>UX/UI</h3>
             <p>Interfaces, fluxos e experiência do jogador</p>
-            <span class="xp-bar" aria-hidden="true"><span style="width: 85%"></span></span>
+            <span class="xp-bar" aria-hidden="true"><span style="width: 92%"></span></span>
           </a>
           <a href="https://felipemartelo.artstation.com/albums/12506630" target="_blank" rel="noopener" class="skill-card">
             <div class="skill-card__icon">
-              <img src="/assets/icons/icon-2d-art.svg" alt="">
+              <img src="/assets/icons/pixel/brush.svg" alt="">
             </div>
             <h3>2D Artist</h3>
             <p>Ilustração e arte digital</p>
-            <span class="xp-bar" aria-hidden="true"><span style="width: 80%"></span></span>
+            <span class="xp-bar" aria-hidden="true"><span style="width: 88%"></span></span>
           </a>
           <a href="https://felipemartelo.artstation.com/albums/12506891" target="_blank" rel="noopener" class="skill-card">
             <div class="skill-card__icon">
-              <img src="/assets/icons/icon-pixel-art.svg" alt="">
+              <img src="/assets/icons/pixel/grid-3x3.svg" alt="">
             </div>
             <h3>Pixel Artist</h3>
             <p>Arte em pixel e sprites</p>
-            <span class="xp-bar" aria-hidden="true"><span style="width: 88%"></span></span>
+            <span class="xp-bar xp-bar--max" aria-hidden="true"><span style="width: 100%"></span></span>
           </a>
           <a href="https://felipemartelo.artstation.com/albums/12532486" target="_blank" rel="noopener" class="skill-card">
             <div class="skill-card__icon">
-              <img src="/assets/icons/icon-3d-art.svg" alt="">
+              <img src="/assets/icons/pixel/box.svg" alt="">
             </div>
             <h3>3D Artist</h3>
             <p>Modelagem e renderização 3D</p>
-            <span class="xp-bar" aria-hidden="true"><span style="width: 72%"></span></span>
+            <span class="xp-bar" aria-hidden="true"><span style="width: 85%"></span></span>
           </a>
         </div>
       </div>
@@ -140,7 +144,7 @@
         <div class="work-grid">
           <a href="/game/" class="work-card work-card--featured">
             <div class="work-card__icon">
-              <img src="/assets/icons/icon-games.svg" alt="">
+              <img src="/assets/icons/pixel/gamepad.svg" alt="">
             </div>
             <div class="work-card__body">
               <h3>Portfolio interativo</h3>
@@ -150,7 +154,7 @@
           </a>
           <a href="https://github.com/Fleyvera" target="_blank" rel="noopener" class="work-card">
             <div class="work-card__icon">
-              <img src="/assets/icons/icon-code.svg" alt="">
+              <img src="/assets/icons/pixel/script.svg" alt="">
             </div>
             <div class="work-card__body">
               <h3>Código</h3>
@@ -160,7 +164,7 @@
           </a>
           <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="work-card">
             <div class="work-card__icon">
-              <img src="/assets/icons/icon-games.svg" alt="">
+              <img src="/assets/icons/pixel/gamepad.svg" alt="">
             </div>
             <div class="work-card__body">
               <h3>Jogos</h3>
@@ -170,7 +174,7 @@
           </a>
           <a href="https://felipemartelo.artstation.com/projects" target="_blank" rel="noopener" class="work-card">
             <div class="work-card__icon">
-              <img src="/assets/icons/icon-art.svg" alt="">
+              <img src="/assets/icons/pixel/brush.svg" alt="">
             </div>
             <div class="work-card__body">
               <h3>Arte</h3>
@@ -262,14 +266,14 @@
           <div class="dialog__grid">
             <div class="contact-info">
               <div class="contact-info__item">
-                <img src="/assets/icons/icon-location.svg" alt="" class="contact-info__icon">
+                <img src="/assets/icons/pixel/map-pin.svg" alt="" class="contact-info__icon">
                 <div>
                   <span class="contact-info__label">Localização</span>
                   <p>São Paulo, SP — Brasil</p>
                 </div>
               </div>
               <div class="contact-info__item">
-                <img src="/assets/icons/icon-email.svg" alt="" class="contact-info__icon">
+                <img src="/assets/icons/pixel/mail.svg" alt="" class="contact-info__icon">
                 <div>
                   <span class="contact-info__label">E-mail</span>
                   <a href="mailto:fleyva2302@gmail.com">fleyva2302@gmail.com</a>
@@ -278,19 +282,19 @@
             </div>
             <div class="contact-social">
               <a href="https://www.linkedin.com/in/felipemartelo/" target="_blank" rel="noopener" class="social-link">
-                <img src="/assets/icons/icon-linkedin.svg" alt="">
+                <img src="/assets/icons/pixel/linkedin.svg" alt="">
                 <span>LinkedIn</span>
               </a>
               <a href="https://www.instagram.com/femartelo/" target="_blank" rel="noopener" class="social-link">
-                <img src="/assets/icons/icon-instagram.svg" alt="">
+                <img src="/assets/icons/pixel/instagram.svg" alt="">
                 <span>Instagram</span>
               </a>
               <a href="https://twitter.com/femartelo" target="_blank" rel="noopener" class="social-link">
-                <img src="/assets/icons/icon-twitter.svg" alt="">
+                <img src="/assets/icons/pixel/x.svg" alt="">
                 <span>Twitter</span>
               </a>
               <a href="mailto:fleyva2302@gmail.com" class="social-link">
-                <img src="/assets/icons/icon-email.svg" alt="">
+                <img src="/assets/icons/pixel/mail.svg" alt="">
                 <span>E-mail</span>
               </a>
             </div>
