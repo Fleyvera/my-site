@@ -29,21 +29,6 @@
       var params = new URLSearchParams(window.location.search);
 
       if (params.get("site") === "1") {
-        localStorage.setItem("preferSite", "1");
-        window.location.replace("/site/");
-        return;
-      }
-
-      if (params.get("game") === "1") {
-        localStorage.removeItem("preferSite");
-        window.location.replace("/game/");
-        return;
-      }
-
-      var preferSite = localStorage.getItem("preferSite") === "1";
-      var isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
-
-      if (preferSite || isMobile) {
         window.location.replace("/site/");
         return;
       }

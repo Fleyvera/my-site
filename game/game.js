@@ -1,33 +1,52 @@
 (function () {
   "use strict";
 
-  var preferSiteLink = document.getElementById("prefer-site-link");
-  var mobileHint = document.querySelector(".game-shell__hint--mobile");
-  var isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
-
-  if (mobileHint && isMobile) {
-    mobileHint.hidden = false;
+  function goToSite() {
+    window.location.href = "/site/";
   }
 
-  if (preferSiteLink) {
-    preferSiteLink.addEventListener("click", function () {
-      localStorage.setItem("preferSite", "1");
-    });
-  }
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      goToSite();
+    }
+  });
 
   if (!document.getElementById("site-mode-nav")) {
     var nav = document.createElement("nav");
     nav.id = "site-mode-nav";
     nav.className = "site-mode-nav";
     nav.setAttribute("aria-label", "Alternar versão do site");
-    nav.innerHTML = '<a href="/site/" id="site-mode-link">Site tradicional</a>';
+    nav.innerHTML =
+      '<button type="button" id="site-test-btn" class="site-mode-nav__btn">Site (teste · Tab)</button>';
     document.body.appendChild(nav);
 
-    var siteModeLink = document.getElementById("site-mode-link");
-    if (siteModeLink) {
-      siteModeLink.addEventListener("click", function () {
-        localStorage.setItem("preferSite", "1");
+    var siteButton = document.getElementById("site-test-btn");
+    if (siteButton) {
+      siteButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        goToSite();
       });
     }
+  }
+
+  if (!document.getElementById("capture-hint")) {
+    var hint = document.createElement("div");
+    hint.id = "capture-hint";
+    hint.className = "capture-hint";
+    hint.textContent = "Clique na tela para capturar o mouse";
+    document.body.appendChild(hint);
+
+    document.addEventListener("pointerlockchange", function () {
+      hint.hidden = document.pointerLockElement != null;
+    });
+
+    document.addEventListener("mousedown", function () {
+      window.setTimeout(function () {
+        if (document.pointerLockElement == null) {
+          hint.hidden = false;
+        }
+      }, 100);
+    });
   }
 })();
