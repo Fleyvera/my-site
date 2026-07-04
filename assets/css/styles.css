@@ -318,60 +318,20 @@ a {
 
 .char-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: min(340px, 100%);
   border: var(--border-w) solid var(--ink);
   border-radius: var(--radius);
   box-shadow: var(--shadow-hard);
-  background: linear-gradient(180deg, #bcd9e8 0%, #d3e6ec 70%, #dfece9 100%);
+  background: var(--card);
   overflow: hidden;
 }
 
-.char-card__tag {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2;
-  padding: 4px 12px;
-  font-family: var(--font-pixel);
-  font-size: 14px;
-  font-weight: 600;
-  color: #fffaf0;
-  background: var(--coral);
-  border: var(--border-w) solid var(--ink);
-  border-radius: 999px;
-  box-shadow: 2px 2px 0 rgba(46, 36, 51, 0.85);
-}
-
-.char-card__world {
+.char-card__display {
   position: relative;
-  height: 240px;
-}
-
-.sprite {
-  width: 14px;
-  height: 21px;
-  background: url('/assets/img/sprite-sheet.png') no-repeat;
-  image-rendering: pixelated;
-  transform-origin: bottom center;
-}
-
-.char-card__avatar {
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  z-index: 1;
-  width: 98px;
-  height: 147px;
-  margin-left: -49px;
-}
-
-.char-card__sprite {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  margin-left: -7px;
-  transform: scale(7);
-  animation: sprite-idle 1.6s steps(4) infinite, avatar-swap-sprite 8s ease-in-out infinite;
+  height: min(360px, 62vw);
+  overflow: hidden;
 }
 
 .char-card__photo {
@@ -380,24 +340,57 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 15%;
-  border: var(--border-w) solid var(--ink);
-  border-radius: 4px;
-  box-shadow: 2px 2px 0 rgba(46, 36, 51, 0.85);
+  object-position: center 18%;
+  transition: opacity 0.25s ease;
+}
+
+.char-card__scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: linear-gradient(180deg, #bcd9e8 0%, #d3e6ec 72%, #dfece9 100%);
   opacity: 0;
-  animation: avatar-swap-photo 8s ease-in-out infinite;
+  transition: opacity 0.25s ease;
 }
 
-@keyframes avatar-swap-photo {
-  0%, 42% { opacity: 0; }
-  50%, 92% { opacity: 1; }
-  100% { opacity: 0; }
+.char-card:hover .char-card__photo,
+.char-card:focus-within .char-card__photo {
+  opacity: 0;
 }
 
-@keyframes avatar-swap-sprite {
-  0%, 42% { opacity: 1; }
-  50%, 92% { opacity: 0; }
-  100% { opacity: 1; }
+.char-card:hover .char-card__scene,
+.char-card:focus-within .char-card__scene {
+  opacity: 1;
+}
+
+.char-card__scene .char-card__ground {
+  position: absolute;
+  inset: auto 0 0;
+  height: 28%;
+  border-top: var(--border-w) solid var(--ink);
+  background: var(--teal);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.char-card__sprite {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 12%;
+  transform: scale(9);
+  animation: sprite-idle 1.6s steps(4) infinite;
+}
+
+.sprite {
+  width: 14px;
+  height: 21px;
+  background: url('/assets/img/sprite-sheet.png') no-repeat;
+  image-rendering: pixelated;
+  transform-origin: bottom center;
 }
 
 .sprite--idle {
@@ -418,45 +411,10 @@ a {
   to   { background-position-x: -196px; }
 }
 
-.pixel-tree {
-  position: absolute;
-  background: url('/assets/img/game-atlas.png') no-repeat;
-  image-rendering: pixelated;
-  transform-origin: bottom center;
-}
-
-.pixel-tree--pine {
-  width: 30px;
-  height: 43px;
-  background-position: -57px -10px;
-  transform: scale(3.2);
-  bottom: 8px;
-  left: 26px;
-}
-
-.pixel-tree--cherry {
-  width: 30px;
-  height: 52px;
-  background-position: -88px -1px;
-  transform: scale(3);
-  bottom: 8px;
-  right: 26px;
-}
-
-.char-card__ground {
-  height: 40px;
-  border-top: var(--border-w) solid var(--ink);
-  background: var(--teal);
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.08) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 2px, transparent 2px);
-  background-size: 10px 10px;
-}
-
 .char-card__plate {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: center;
   padding: 14px 18px;
   background: var(--card);
   border-top: var(--border-w) solid var(--ink);
@@ -466,12 +424,6 @@ a {
   font-family: var(--font-pixel);
   font-size: 19px;
   font-weight: 600;
-}
-
-.char-card__plate span {
-  font-family: var(--font-pixel);
-  font-size: 14px;
-  color: var(--teal-dark);
 }
 
 /* ==========================================================================
@@ -615,8 +567,8 @@ a {
 .xp-bar--max span {
   background: repeating-linear-gradient(
     90deg,
-    var(--yellow) 0 6px,
-    #c99a2e 6px 8px
+    #6bc04a 0 6px,
+    #4a9e32 6px 8px
   );
 }
 
@@ -974,26 +926,13 @@ a {
     order: -1;
   }
 
-  .char-card {
-    width: min(300px, 100%);
-  }
-
-  .char-card__world {
-    height: 200px;
-  }
-
-  .char-card__avatar {
-    width: 84px;
-    height: 126px;
-    margin-left: -42px;
+  .char-card__display {
+    height: min(320px, 70vw);
   }
 
   .char-card__sprite {
-    transform: scale(6);
+    transform: scale(7.5);
   }
-
-  .pixel-tree--pine   { transform: scale(2.8); }
-  .pixel-tree--cherry { transform: scale(2.6); }
 
   .dialog__grid {
     grid-template-columns: 1fr;
