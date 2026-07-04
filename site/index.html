@@ -4,23 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Felipe Martelo — Game Developer, Professor de Game Dev & UX/UI, artista digital. Jogos, interfaces e pixel art.">
-  <meta name="theme-color" content="#111114">
+  <meta name="theme-color" content="#bcccf6">
   <title>Felipe Martelo — Game Dev & Artist</title>
   <link rel="icon" href="/assets/img/MeIcon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-<body>
+<body class="game-site">
 
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#home" class="header__logo">
-        <img src="/assets/img/MeIcon.png" alt="" width="32" height="32">
-        <span>Felipe Martelo</span>
+  <header class="game-hud" id="header">
+    <div class="container game-hud__inner">
+      <a href="#home" class="game-hud__logo">
+        <img src="/assets/img/MeIcon.png" alt="" width="28" height="28">
+        Felipe Martelo
       </a>
-      <nav class="header__nav" id="nav" aria-label="Navegação principal">
+      <nav class="game-hud__nav" id="nav" aria-label="Navegação principal">
         <a href="#home">Início</a>
         <a href="#skills">Especialidades</a>
         <a href="#work">Portfolio</a>
@@ -28,48 +28,69 @@
         <a href="#experience">Experiência</a>
         <a href="#contact">Contato</a>
       </nav>
-      <div class="header__actions">
-        <a href="/game/" class="header__link" id="play-game-link">Portfolio interativo</a>
-        <a href="#contact" class="header__cta">Fale comigo</a>
+      <div class="game-hud__actions">
+        <a href="/game/" class="game-hud__link" id="play-game-link">Jogo ↗</a>
+        <a href="#contact" class="game-hud__cta">Fale comigo</a>
       </div>
-      <button class="header__toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
+      <button class="game-hud__toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main>
+  <main class="game-world">
     <section class="hero" id="home">
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="hero__label">Game Developer · Professor · UX/UI</p>
-          <h1 class="hero__title">
-            Olá, sou<br>
-            <span class="hero__name">Felipe Martelo</span>
-          </h1>
-          <p class="hero__text">
-            Faço jogos, crio interfaces, trabalho com pixel art e ensino
-            Game Development e UX/UI na universidade.
-          </p>
-          <div class="hero__tags">
-            <span>Game Dev</span>
-            <span>Professor</span>
-            <span>UX/UI</span>
-            <span>Pixel Art</span>
-          </div>
-          <div class="hero__actions">
-            <a href="#work" class="btn btn--primary">Ver portfolio</a>
-            <a href="https://www.linkedin.com/in/felipemartelo/" target="_blank" rel="noopener" class="btn btn--ghost">LinkedIn</a>
+      <div class="container hero__layout">
+        <div class="save-card">
+          <div class="save-card__tab">Game Dev · 2026</div>
+          <div class="save-card__body">
+            <p class="hero__tag">Game Developer · Professor · UX/UI</p>
+            <h1 class="hero__title">
+              <span class="hero__title-bg" aria-hidden="true">portfolio</span>
+              <span class="hero__title-name">Felipe Martelo</span>
+            </h1>
+            <p class="hero__text">
+              Faço jogos, crio interfaces, trabalho com pixel art e ensino
+              Game Development e UX/UI na universidade.
+            </p>
+            <div class="stickers">
+              <span class="sticker sticker--pink">Game Dev</span>
+              <span class="sticker sticker--teal">Professor</span>
+              <span class="sticker sticker--purple">UX/UI</span>
+              <span class="sticker sticker--mint">Pixel Art</span>
+            </div>
+            <div class="hero__actions">
+              <a href="#work" class="btn btn--primary">Ver portfolio</a>
+              <a href="/game/" class="btn btn--secondary">Portfolio interativo</a>
+            </div>
           </div>
         </div>
-        <div class="hero__figure">
-          <div class="pixel-buddy" id="pixel-buddy">
-            <img src="/assets/img/Me.png" alt="Felipe Martelo em pixel art" width="512" height="512" draggable="false">
+
+        <div class="hero__stage-wrap">
+          <div class="hero__stage" aria-label="Personagem interativo — mova o mouse sobre a cena">
+            <div class="hero__deco hero__deco--pine" aria-hidden="true"></div>
+            <div class="hero__deco hero__deco--cherry" aria-hidden="true"></div>
+            <canvas id="pixel-buddy" width="400" height="280"></canvas>
           </div>
+          <p class="hero__hint">Mova o mouse — MeForYouMe te segue</p>
         </div>
       </div>
     </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>ESPECIALIDADES</span><span>★</span>
+        <span>PORTFOLIO</span><span>★</span>
+        <span>GAME DEV</span><span>★</span>
+        <span>PIXEL ART</span><span>★</span>
+        <span>UX/UI</span><span>★</span>
+        <span>ESPECIALIDADES</span><span>★</span>
+        <span>PORTFOLIO</span><span>★</span>
+        <span>GAME DEV</span><span>★</span>
+        <span>PIXEL ART</span><span>★</span>
+        <span>UX/UI</span><span>★</span>
+      </div>
+    </div>
 
     <section class="section" id="skills">
       <div class="container">
@@ -80,29 +101,29 @@
             <p class="section__desc">O que eu faço de melhor — na prática e na sala de aula.</p>
           </div>
         </header>
-        <div class="cards cards--skills">
-          <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="card">
-            <img src="/assets/icons/lucide/gamepad-2.svg" alt="" class="card__icon">
+        <div class="inventory">
+          <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="inventory__slot">
+            <img src="/assets/icons/pixel/gamepad.svg" alt="" class="inventory__icon" width="24" height="24">
             <h3>Game Dev</h3>
             <p>Jogos indie do conceito ao build</p>
           </a>
-          <a href="#experience" class="card">
-            <img src="/assets/icons/lucide/layout-grid.svg" alt="" class="card__icon">
+          <a href="#experience" class="inventory__slot">
+            <img src="/assets/icons/pixel/window-frame.svg" alt="" class="inventory__icon" width="24" height="24">
             <h3>UX/UI</h3>
             <p>Interfaces e experiência do jogador</p>
           </a>
-          <a href="https://felipemartelo.artstation.com/albums/12506630" target="_blank" rel="noopener" class="card">
-            <img src="/assets/icons/lucide/brush.svg" alt="" class="card__icon">
+          <a href="https://felipemartelo.artstation.com/albums/12506630" target="_blank" rel="noopener" class="inventory__slot">
+            <img src="/assets/icons/pixel/brush.svg" alt="" class="inventory__icon" width="24" height="24">
             <h3>2D Artist</h3>
             <p>Ilustração digital</p>
           </a>
-          <a href="https://felipemartelo.artstation.com/albums/12506891" target="_blank" rel="noopener" class="card">
-            <img src="/assets/icons/lucide/grid-3x3.svg" alt="" class="card__icon">
+          <a href="https://felipemartelo.artstation.com/albums/12506891" target="_blank" rel="noopener" class="inventory__slot">
+            <img src="/assets/icons/pixel/grid-3x3.svg" alt="" class="inventory__icon" width="24" height="24">
             <h3>Pixel Artist</h3>
             <p>Sprites e pixel art</p>
           </a>
-          <a href="https://felipemartelo.artstation.com/albums/12532486" target="_blank" rel="noopener" class="card">
-            <img src="/assets/icons/lucide/box.svg" alt="" class="card__icon">
+          <a href="https://felipemartelo.artstation.com/albums/12532486" target="_blank" rel="noopener" class="inventory__slot">
+            <img src="/assets/icons/pixel/box.svg" alt="" class="inventory__icon" width="24" height="24">
             <h3>3D Artist</h3>
             <p>Modelagem e renderização 3D</p>
           </a>
@@ -110,7 +131,7 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="work">
+    <section class="section section--panel" id="work">
       <div class="container">
         <header class="section__head">
           <span class="section__num">02</span>
@@ -119,30 +140,30 @@
             <p class="section__desc">Projetos, jogos e arte.</p>
           </div>
         </header>
-        <div class="links">
-          <a href="https://github.com/Fleyvera" target="_blank" rel="noopener" class="links__item">
-            <img src="/assets/icons/lucide/github.svg" alt="" class="links__icon">
-            <div class="links__body">
+        <div class="menu-list">
+          <a href="https://github.com/Fleyvera" target="_blank" rel="noopener" class="menu-list__item">
+            <span class="menu-list__arrow">▶</span>
+            <div>
               <h3>Código</h3>
               <p>Repositórios open source no GitHub</p>
             </div>
-            <span class="links__url">github.com/Fleyvera →</span>
+            <span class="menu-list__url">github.com/Fleyvera</span>
           </a>
-          <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="links__item">
-            <img src="/assets/icons/lucide/gamepad-2.svg" alt="" class="links__icon">
-            <div class="links__body">
+          <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="menu-list__item">
+            <span class="menu-list__arrow">▶</span>
+            <div>
               <h3>Jogos</h3>
               <p>Indies publicados no itch.io</p>
             </div>
-            <span class="links__url">felipemartelo.itch.io →</span>
+            <span class="menu-list__url">felipemartelo.itch.io</span>
           </a>
-          <a href="https://felipemartelo.artstation.com/projects" target="_blank" rel="noopener" class="links__item">
-            <img src="/assets/icons/lucide/palette.svg" alt="" class="links__icon">
-            <div class="links__body">
+          <a href="https://felipemartelo.artstation.com/projects" target="_blank" rel="noopener" class="menu-list__item">
+            <span class="menu-list__arrow">▶</span>
+            <div>
               <h3>Arte</h3>
               <p>Portfólio visual no ArtStation</p>
             </div>
-            <span class="links__url">artstation.com →</span>
+            <span class="menu-list__url">artstation.com</span>
           </a>
         </div>
       </div>
@@ -157,28 +178,25 @@
             <p class="section__desc">Produções comerciais em estúdio.</p>
           </div>
         </header>
-        <article class="project">
-          <div class="project__media">
+        <article class="quest quest--featured">
+          <div class="quest__thumb">
             <img src="/assets/img/born-again.jpg" alt="Born Again">
           </div>
-          <div class="project__body">
-            <div class="project__top">
+          <div class="quest__body">
+            <div class="quest__head">
               <h3>Born Again</h3>
-              <span class="project__tag">Unnamed Studios</span>
+              <span class="quest__badge">Unnamed Studios</span>
             </div>
             <p>Perma-death rogue-like MMORPG com hack-n-slash. Atuei no desenvolvimento na Unnamed Studios.</p>
             <div class="store-links">
               <a href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank" rel="noopener" class="store-link">
-                <img src="/assets/img/stores/steam-icon.svg" alt="" width="16" height="16">
-                Steam
+                <img src="/assets/img/stores/steam-icon.svg" alt="" width="16" height="16"> Steam
               </a>
               <a href="https://play.google.com/store/apps/details?id=co.unnamedstudios.bornagain" target="_blank" rel="noopener" class="store-link">
-                <img src="/assets/img/stores/google-play.svg" alt="" width="16" height="16">
-                Google Play
+                <img src="/assets/img/stores/google-play.svg" alt="" width="16" height="16"> Google Play
               </a>
               <a href="https://apps.apple.com/app/born-again-online/id1629507405" target="_blank" rel="noopener" class="store-link">
-                <img src="/assets/img/stores/app-store.svg" alt="" width="16" height="16">
-                App Store
+                <img src="/assets/img/stores/app-store.svg" alt="" width="16" height="16"> App Store
               </a>
             </div>
           </div>
@@ -186,7 +204,7 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="experience">
+    <section class="section section--panel" id="experience">
       <div class="container">
         <header class="section__head">
           <span class="section__num">04</span>
@@ -195,11 +213,11 @@
             <p class="section__desc">Instituições e empresas com as quais colaborei.</p>
           </div>
         </header>
-        <div class="jobs">
-          <article class="job">
-            <img src="/assets/img/unifecaf.png" alt="UniFECAF" class="job__logo">
-            <div class="job__body">
-              <div class="job__top">
+        <div class="quest-log">
+          <article class="quest-log__entry">
+            <img src="/assets/img/unifecaf.png" alt="UniFECAF" class="quest-log__logo">
+            <div>
+              <div class="quest-log__head">
                 <h3>UniFECAF</h3>
                 <span>Professor · Game Dev &amp; UX/UI</span>
               </div>
@@ -207,10 +225,10 @@
               <a href="https://www.unifecaf.com.br/" target="_blank" rel="noopener">unifecaf.com.br →</a>
             </div>
           </article>
-          <article class="job">
-            <img src="/assets/img/unnamed.png" alt="Unnamed Studios" class="job__logo">
-            <div class="job__body">
-              <div class="job__top">
+          <article class="quest-log__entry">
+            <img src="/assets/img/unnamed.png" alt="Unnamed Studios" class="quest-log__logo">
+            <div>
+              <div class="quest-log__head">
                 <h3>Unnamed Studios</h3>
                 <span>Game Designer · Born Again</span>
               </div>
@@ -218,10 +236,10 @@
               <a href="https://unnamedstudios.co/" target="_blank" rel="noopener">unnamedstudios.co →</a>
             </div>
           </article>
-          <article class="job">
-            <img src="/assets/img/avenues.png" alt="Avenues" class="job__logo">
-            <div class="job__body">
-              <div class="job__top">
+          <article class="quest-log__entry">
+            <img src="/assets/img/avenues.png" alt="Avenues" class="quest-log__logo">
+            <div>
+              <div class="quest-log__head">
                 <h3>Avenues</h3>
                 <span>Educação</span>
               </div>
@@ -229,10 +247,10 @@
               <a href="https://www.avenues.org/pt/sp/" target="_blank" rel="noopener">avenues.org →</a>
             </div>
           </article>
-          <article class="job">
-            <img src="/assets/img/Sg.png" alt="SuperGeeks" class="job__logo">
-            <div class="job__body">
-              <div class="job__top">
+          <article class="quest-log__entry">
+            <img src="/assets/img/Sg.png" alt="SuperGeeks" class="quest-log__logo">
+            <div>
+              <div class="quest-log__head">
                 <h3>SuperGeeks</h3>
                 <span>Tecnologia</span>
               </div>
@@ -253,31 +271,27 @@
             <p class="section__desc">Vamos conversar sobre projetos, colaborações ou oportunidades.</p>
           </div>
         </header>
-        <div class="contact">
-          <div class="contact__main">
-            <span class="contact__label">E-mail</span>
-            <a href="mailto:fleyva2302@gmail.com" class="contact__email">fleyva2302@gmail.com</a>
-            <p class="contact__loc">
-              <img src="/assets/icons/lucide/map-pin.svg" alt="" width="16" height="16">
+        <div class="dialogue">
+          <div class="dialogue__box">
+            <p class="dialogue__label">NPC: Felipe Martelo</p>
+            <a href="mailto:fleyva2302@gmail.com" class="dialogue__email">fleyva2302@gmail.com</a>
+            <p class="dialogue__loc">
+              <img src="/assets/icons/pixel/map-pin.svg" alt="" width="14" height="14">
               São Paulo, SP — Brasil
             </p>
           </div>
-          <div class="contact__social">
+          <div class="dialogue__choices">
             <a href="https://www.linkedin.com/in/felipemartelo/" target="_blank" rel="noopener">
-              <img src="/assets/icons/lucide/linkedin.svg" alt="">
-              LinkedIn
+              <img src="/assets/icons/pixel/linkedin.svg" alt="" width="16" height="16"> LinkedIn
             </a>
             <a href="https://www.instagram.com/femartelo/" target="_blank" rel="noopener">
-              <img src="/assets/icons/lucide/instagram.svg" alt="">
-              Instagram
+              <img src="/assets/icons/pixel/instagram.svg" alt="" width="16" height="16"> Instagram
             </a>
             <a href="https://twitter.com/femartelo" target="_blank" rel="noopener">
-              <img src="/assets/icons/lucide/twitter.svg" alt="">
-              Twitter
+              <img src="/assets/icons/pixel/x.svg" alt="" width="16" height="16"> Twitter
             </a>
             <a href="mailto:fleyva2302@gmail.com">
-              <img src="/assets/icons/lucide/mail.svg" alt="">
-              E-mail
+              <img src="/assets/icons/pixel/mail.svg" alt="" width="16" height="16"> E-mail
             </a>
           </div>
         </div>
@@ -285,10 +299,10 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>&copy; 2026 Felipe Martelo · Game Dev, UX/UI &amp; pixel art.</p>
-      <a href="#home">Voltar ao topo ↑</a>
+  <footer class="game-footer">
+    <div class="container game-footer__inner">
+      <p>© 2026 Felipe Martelo · Game Dev, UX/UI &amp; pixel art</p>
+      <a href="#home">↑ Topo</a>
     </div>
   </footer>
 
