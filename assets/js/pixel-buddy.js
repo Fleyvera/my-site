@@ -2,81 +2,47 @@
   'use strict';
 
   var buddy = document.getElementById('pixel-buddy');
-  if (!buddy) return;
+  var zone = document.querySelector('.hero__figure');
+  if (!buddy || !zone) return;
 
+  var img = buddy.querySelector('img');
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var coarsePointer = window.matchMedia('(pointer: coarse)').matches;
-  var canFollow = !reducedMotion && !coarsePointer;
 
-  if (!canFollow) {
-    var anchor = document.querySelector('.hero__figure');
-    if (anchor) {
-      var placeholder = anchor.querySelector('.hero__figure-placeholder');
-      if (placeholder) placeholder.remove();
-      anchor.appendChild(buddy);
-    }
+  if (reducedMotion || coarsePointer) {
     buddy.classList.add('pixel-buddy--static');
     return;
   }
 
-  var posX = window.innerWidth * 0.72;
-  var posY = window.innerHeight * 0.42;
-  var targetX = posX;
-  var targetY = posY;
   var facing = 1;
-  var idleTimer = 0;
-  var isIdle = true;
 
-  function setTransform() {
-    var tilt = Math.max(-10, Math.min(10, (targetX - posX) * 0.04));
+  function update(clientX, clientY) {
+    var rect = zone.getBoundingClientRect();
+    var centerX = rect.left + rect.width * 0.5;
+    var centerY = rect.top + rect.height * 0.55;
+    var dx = clientX - centerX;
+    var dy = clientY - centerY;
+    var distance = Math.min(Math.hypot(dx, dy), 220);
+    var angle = Math.atan2(dy, dx);
+    var moveX = Math.cos(angle) * distance * 0.14;
+    var moveY = Math.sin(angle) * distance * 0.1;
+    facing = dx >= 0 ? 1 : -1;
+    var tilt = Math.max(-8, Math.min(8, dx * 0.015));
+
     buddy.style.transform =
-      'translate3d(' + posX + 'px,' + posY + 'px,0) translate(-50%,-100%) scaleX(' + facing + ') rotate(' + tilt + 'deg)';
+      'translate(' + moveX + 'px,' + moveY + 'px) scaleX(' + facing + ') rotate(' + tilt + 'deg)';
   }
 
-  function seedFromHero() {
-    var anchor = document.querySelector('.hero__figure');
-    if (!anchor) return;
+  window.addEventListener('mousemove', function (event) {
+    update(event.clientX, event.clientY);
+    buddy.classList.remove('is-idle');
+  }, { passive: true });
 
-    var rect = anchor.getBoundingClientRect();
-    posX = rect.left + rect.width * 0.5;
-    posY = rect.top + rect.height * 0.88;
-    targetX = posX;
-    targetY = posY;
-    setTransform();
-  }
+  window.addEventListener('mouseleave', function () {
+    buddy.style.transform = 'translate(0, 0) scaleX(1) rotate(0deg)';
+    buddy.classList.add('is-idle');
+  });
 
-  function onMove(event) {
-    targetX = event.clientX;
-    targetY = event.clientY + 12;
-    idleTimer = 0;
-    if (isIdle) {
-      isIdle = false;
-      buddy.classList.remove('is-idle');
-    }
-  }
-
-  function tick() {
-    posX += (targetX - posX) * 0.09;
-    posY += (targetY - posY) * 0.09;
-    facing = targetX >= posX ? 1 : -1;
-
-    idleTimer += 1;
-    if (!isIdle && idleTimer > 40) {
-      isIdle = true;
-      buddy.classList.add('is-idle');
-    }
-
-    var margin = 72;
-    posX = Math.max(margin, Math.min(window.innerWidth - margin, posX));
-    posY = Math.max(margin + 40, Math.min(window.innerHeight - margin, posY));
-
-    setTransform();
-    requestAnimationFrame(tick);
-  }
-
-  seedFromHero();
-  window.addEventListener('mousemove', onMove, { passive: true });
-  window.addEventListener('resize', seedFromHero, { passive: true });
   buddy.classList.add('is-active');
-  requestAnimationFrame(tick);
+  buddy.classList.add('is-idle');
 })();
