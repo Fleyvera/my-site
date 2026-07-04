@@ -589,18 +589,24 @@ a {
   color: var(--accent-hover);
 }
 
-.store-links {
+.experience-card__content .store-links {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
+  margin-top: 4px;
 }
 
-.store-link {
+.experience-card__content .store-link {
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
+  max-width: none;
+  flex: 0 0 auto;
   padding: 6px 12px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -608,30 +614,23 @@ a {
   box-shadow: 2px 2px 0 rgba(138, 125, 168, 0.15);
   font-size: 13px;
   font-weight: 500;
+  line-height: 1;
   color: var(--text-muted);
   white-space: nowrap;
   transition: all var(--transition);
 }
 
-.store-link__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
-.store-link__icon img {
-  display: block;
+.experience-card__content .store-link img {
+  display: inline-block;
   width: 16px;
   height: 16px;
   max-width: 16px;
   max-height: 16px;
+  flex: 0 0 16px;
   object-fit: contain;
 }
 
-.store-link:hover {
+.experience-card__content .store-link:hover {
   border-color: var(--accent);
   background: var(--accent-light);
   color: var(--text);
