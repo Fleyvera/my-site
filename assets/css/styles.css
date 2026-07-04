@@ -316,27 +316,82 @@ a {
 .hero__figure {
   position: relative;
   justify-self: end;
-  max-width: 420px;
+  max-width: 280px;
   width: 100%;
+  min-height: 280px;
+}
+
+.hero__figure-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 .hero__figure::before {
   content: '';
   position: absolute;
-  inset: -2px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, var(--accent), var(--violet));
-  opacity: 0.5;
+  inset: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 241, 53, 0.15), transparent 70%);
   z-index: 0;
+  pointer-events: none;
 }
 
-.hero__figure img {
-  position: relative;
-  z-index: 1;
+/* Pixel buddy */
+
+.pixel-buddy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  width: clamp(120px, 16vw, 176px);
+  height: clamp(120px, 16vw, 176px);
+  pointer-events: none;
+  will-change: transform;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pixel-buddy.is-active,
+.pixel-buddy--static {
+  opacity: 1;
+}
+
+.pixel-buddy img {
   width: 100%;
-  border-radius: 18px;
-  object-fit: cover;
-  aspect-ratio: 4 / 5;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+}
+
+.pixel-buddy.is-idle img {
+  animation: buddy-bob 2.4s ease-in-out infinite;
+}
+
+.pixel-buddy--static {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin: 0 auto;
+  transform: none !important;
+  opacity: 1;
+}
+
+.hero__figure .pixel-buddy--static {
+  width: clamp(140px, 40vw, 200px);
+  height: clamp(140px, 40vw, 200px);
+}
+
+@keyframes buddy-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-buddy.is-idle img {
+    animation: none;
+  }
 }
 
 .hero__marquee {
@@ -875,7 +930,8 @@ a {
 
   .hero__figure {
     justify-self: center;
-    max-width: 320px;
+    max-width: 220px;
+    min-height: 220px;
   }
 
   .featured {
