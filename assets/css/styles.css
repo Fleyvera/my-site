@@ -698,6 +698,24 @@ a {
   color: var(--accent-hover);
 }
 
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer__links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  transition: color var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--accent-hover);
+}
+
 /* Responsive */
 
 @media (max-width: 960px) {
