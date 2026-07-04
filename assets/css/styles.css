@@ -609,13 +609,21 @@ a {
   transition: all var(--transition);
 }
 
-.store-link img {
+.store-link__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.store-link__icon img {
   display: block;
   width: 22px;
   height: 22px;
   max-width: 22px;
   max-height: 22px;
-  flex-shrink: 0;
   object-fit: contain;
 }
 
