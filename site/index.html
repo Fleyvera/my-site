@@ -23,8 +23,8 @@
       <nav class="header__nav" id="nav" aria-label="Navegação principal">
         <a href="#home">Início</a>
         <a href="#skills">Especialidades</a>
-        <a href="#games">Jogos</a>
         <a href="#work">Trabalhos</a>
+        <a href="#participations">Participações</a>
         <a href="#experience">Experiência</a>
         <a href="/game/">Portfolio</a>
         <a href="#contact">Contato</a>
@@ -56,8 +56,8 @@
             <span class="hero__role">UX/UI</span>
           </div>
           <div class="hero__actions">
-            <a href="#games" class="btn btn--primary" id="play-game-link">Ver jogos</a>
-            <a href="/game/" class="btn btn--ghost">Portfolio interativo</a>
+            <a href="/game/" class="btn btn--primary" id="play-game-link">Portfolio interativo</a>
+            <a href="#work" class="btn btn--ghost">Ver trabalhos</a>
             <a href="https://www.linkedin.com/in/felipemartelo/" target="_blank" rel="noopener" class="btn btn--ghost">LinkedIn</a>
           </div>
         </div>
@@ -116,78 +116,24 @@
       </div>
     </section>
 
-    <section class="section section--alt" id="games">
+    <section class="section section--alt" id="work">
       <div class="container">
         <header class="section__header">
           <span class="section__number">02</span>
-          <h2 class="section__title">Jogos</h2>
-          <p class="section__desc">Produções em estúdio e projetos que criei por conta própria.</p>
-        </header>
-
-        <div class="games-block">
-          <h3 class="games-block__title">Jogos profissionais</h3>
-          <div class="games-grid">
-            <article class="game-card">
-              <div class="game-card__cover">
-                <img src="/assets/img/born-again.jpg" alt="Capa de Born Again">
-              </div>
-              <div class="game-card__body">
-                <div class="game-card__meta">
-                  <h4>Born Again</h4>
-                  <span class="game-card__tag">Unnamed Studios</span>
-                </div>
-                <p>Perma-death rogue-like MMORPG com hack-n-slash. Atuei no desenvolvimento do jogo na Unnamed Studios.</p>
-                <div class="game-card__links">
-                  <a href="https://play.google.com/store/apps/details?id=co.unnamedstudios.bornagain" target="_blank" rel="noopener">Google Play →</a>
-                  <a href="https://unnamedstudios.co/" target="_blank" rel="noopener">unnamedstudios.co →</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="games-block">
-          <h3 class="games-block__title">Projetos pessoais</h3>
-          <div class="games-grid">
-            <a href="/game/" class="game-card game-card--link">
-              <div class="game-card__cover">
-                <img src="/game/index.png" alt="Portfolio interativo">
-              </div>
-              <div class="game-card__body">
-                <div class="game-card__meta">
-                  <h4>Portfolio interativo</h4>
-                  <span class="game-card__tag game-card__tag--personal">Pessoal</span>
-                </div>
-                <p>Mini-mundo em pixel art para explorar meu trabalho — jogue no desktop.</p>
-                <span class="game-card__cta">Jogar →</span>
-              </div>
-            </a>
-            <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="game-card game-card--link">
-              <div class="game-card__cover game-card__cover--placeholder">
-                <img src="/assets/icons/icon-games.svg" alt="">
-              </div>
-              <div class="game-card__body">
-                <div class="game-card__meta">
-                  <h4>Meus jogos no itch.io</h4>
-                  <span class="game-card__tag game-card__tag--personal">Pessoal</span>
-                </div>
-                <p>Jogos independentes que desenvolvi do conceito ao build.</p>
-                <span class="game-card__cta">felipemartelo.itch.io →</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="work">
-      <div class="container">
-        <header class="section__header">
-          <span class="section__number">03</span>
           <h2 class="section__title">Trabalhos</h2>
-          <p class="section__desc">Código, arte e outros portfólios.</p>
+          <p class="section__desc">Onde você encontra meus projetos e portfólios.</p>
         </header>
-        <div class="work-grid work-grid--compact">
+        <div class="work-grid">
+          <a href="/game/" class="work-card">
+            <div class="work-card__icon">
+              <img src="/assets/icons/icon-games.svg" alt="">
+            </div>
+            <div class="work-card__body">
+              <h3>Portfolio interativo</h3>
+              <p>Um mini-mundo pixel art para explorar meu trabalho.</p>
+              <span class="work-card__link">Jogar no desktop →</span>
+            </div>
+          </a>
           <a href="https://github.com/Fleyvera" target="_blank" rel="noopener" class="work-card">
             <div class="work-card__icon">
               <img src="/assets/icons/icon-code.svg" alt="">
@@ -196,6 +142,16 @@
               <h3>Código</h3>
               <p>Projetos open source e repositórios no GitHub.</p>
               <span class="work-card__link">github.com/Fleyvera →</span>
+            </div>
+          </a>
+          <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="work-card">
+            <div class="work-card__icon">
+              <img src="/assets/icons/icon-games.svg" alt="">
+            </div>
+            <div class="work-card__body">
+              <h3>Jogos</h3>
+              <p>Jogos independentes publicados no itch.io.</p>
+              <span class="work-card__link">felipemartelo.itch.io →</span>
             </div>
           </a>
           <a href="https://felipemartelo.artstation.com/projects" target="_blank" rel="noopener" class="work-card">
@@ -208,6 +164,35 @@
               <span class="work-card__link">artstation.com →</span>
             </div>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="participations">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__number">03</span>
+          <h2 class="section__title">Jogos em que participei</h2>
+          <p class="section__desc">Produções comerciais em estúdio nas quais atuei no desenvolvimento.</p>
+        </header>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-card__logo">
+              <img src="/assets/img/born-again.jpg" alt="Born Again">
+            </div>
+            <div class="experience-card__content">
+              <div class="experience-card__meta">
+                <h3>Born Again</h3>
+                <span class="experience-card__role">Unnamed Studios</span>
+              </div>
+              <p>Perma-death rogue-like MMORPG com hack-n-slash. Atuei no desenvolvimento na Unnamed Studios.</p>
+              <div class="experience-card__links">
+                <a href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank" rel="noopener">Steam →</a>
+                <a href="https://play.google.com/store/apps/details?id=co.unnamedstudios.bornagain" target="_blank" rel="noopener">Google Play →</a>
+                <a href="https://apps.apple.com/app/born-again-online/id1629507405" target="_blank" rel="noopener">App Store →</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -276,7 +261,7 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section section--alt" id="contact">
       <div class="container">
         <header class="section__header">
           <span class="section__number">05</span>
