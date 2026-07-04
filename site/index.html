@@ -23,10 +23,9 @@
       <nav class="header__nav" id="nav" aria-label="Navegação principal">
         <a href="#home">Início</a>
         <a href="#skills">Especialidades</a>
-        <a href="#work">Trabalhos</a>
+        <a href="#work">Portfolio</a>
         <a href="#participations">Participações</a>
         <a href="#experience">Experiência</a>
-        <a href="/game/">Portfolio</a>
         <a href="#contact">Contato</a>
       </nav>
       <a href="#contact" class="header__cta">Fale comigo</a>
@@ -56,8 +55,7 @@
             <span class="hero__role">UX/UI</span>
           </div>
           <div class="hero__actions">
-            <a href="/game/" class="btn btn--primary" id="play-game-link">Portfolio interativo</a>
-            <a href="#work" class="btn btn--ghost">Ver trabalhos</a>
+            <a href="#work" class="btn btn--primary">Ver portfolio</a>
             <a href="https://www.linkedin.com/in/felipemartelo/" target="_blank" rel="noopener" class="btn btn--ghost">LinkedIn</a>
           </div>
         </div>
@@ -120,20 +118,10 @@
       <div class="container">
         <header class="section__header">
           <span class="section__number">02</span>
-          <h2 class="section__title">Trabalhos</h2>
+          <h2 class="section__title">Portfolio</h2>
           <p class="section__desc">Onde você encontra meus projetos e portfólios.</p>
         </header>
         <div class="work-grid">
-          <a href="/game/" class="work-card">
-            <div class="work-card__icon">
-              <img src="/assets/icons/icon-games.svg" alt="">
-            </div>
-            <div class="work-card__body">
-              <h3>Portfolio interativo</h3>
-              <p>Um mini-mundo pixel art para explorar meu trabalho.</p>
-              <span class="work-card__link">Jogar no desktop →</span>
-            </div>
-          </a>
           <a href="https://github.com/Fleyvera" target="_blank" rel="noopener" class="work-card">
             <div class="work-card__icon">
               <img src="/assets/icons/icon-code.svg" alt="">
@@ -186,10 +174,19 @@
                 <span class="experience-card__role">Unnamed Studios</span>
               </div>
               <p>Perma-death rogue-like MMORPG com hack-n-slash. Atuei no desenvolvimento na Unnamed Studios.</p>
-              <div class="experience-card__links">
-                <a href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank" rel="noopener">Steam →</a>
-                <a href="https://play.google.com/store/apps/details?id=co.unnamedstudios.bornagain" target="_blank" rel="noopener">Google Play →</a>
-                <a href="https://apps.apple.com/app/born-again-online/id1629507405" target="_blank" rel="noopener">App Store →</a>
+              <div class="store-links">
+                <a href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank" rel="noopener" class="store-link" aria-label="Born Again na Steam">
+                  <img src="/assets/icons/icon-steam.svg" alt="">
+                  <span>Steam</span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=co.unnamedstudios.bornagain" target="_blank" rel="noopener" class="store-link" aria-label="Born Again no Google Play">
+                  <img src="/assets/icons/icon-google-play.svg" alt="">
+                  <span>Google Play</span>
+                </a>
+                <a href="https://apps.apple.com/app/born-again-online/id1629507405" target="_blank" rel="noopener" class="store-link" aria-label="Born Again na App Store">
+                  <img src="/assets/icons/icon-app-store.svg" alt="">
+                  <span>App Store</span>
+                </a>
               </div>
             </div>
           </article>
@@ -312,7 +309,6 @@
     <div class="container footer__inner">
       <p>&copy; 2026 Felipe Martelo · Game Dev, UX/UI &amp; pixel art.</p>
       <div class="footer__links">
-        <a href="/game/">Portfolio interativo</a>
         <a href="#home" class="footer__top">Voltar ao topo ↑</a>
       </div>
     </div>

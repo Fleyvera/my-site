@@ -589,6 +589,38 @@ a {
   color: var(--accent-hover);
 }
 
+.store-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.store-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  transition: all var(--transition);
+}
+
+.store-link img {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.store-link:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
 /* Contact */
 
 .contact-grid {
