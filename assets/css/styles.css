@@ -250,7 +250,7 @@ a {
    ========================================================================== */
 
 .hero {
-  padding: calc(var(--header-h) + 64px) 0 88px;
+  padding: calc(var(--header-h) + 64px) 0 48px;
 }
 
 .hero__grid {
@@ -846,10 +846,11 @@ a {
    Footer
    ========================================================================== */
 
-.footer {
-  margin-top: 40px;
-}
+/* ==========================================================================
+   Faixa de chão (divisor / footer)
+   ========================================================================== */
 
+.ground-strip,
 .footer__ground {
   position: relative;
   height: 72px;
@@ -863,6 +864,7 @@ a {
   overflow: hidden;
 }
 
+.ground-strip__walker,
 .footer__walker {
   position: absolute;
   bottom: 2px;
@@ -870,6 +872,7 @@ a {
   animation: walker-cross 22s linear infinite;
 }
 
+.ground-strip__walker .sprite,
 .footer__walker .sprite {
   transform: scale(3);
 }
@@ -877,6 +880,10 @@ a {
 @keyframes walker-cross {
   from { transform: translateX(0); }
   to   { transform: translateX(calc(100vw + 160px)); }
+}
+
+.footer {
+  margin-top: 40px;
 }
 
 .footer__inner {
