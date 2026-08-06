@@ -493,8 +493,10 @@ a {
 .skill-card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 22px 20px;
+  align-items: center;
+  gap: 10px;
+  padding: 28px 20px 26px;
+  text-align: center;
   background: var(--card);
   border: var(--border-w) solid var(--ink);
   border-radius: var(--radius);
@@ -511,7 +513,7 @@ a {
   width: 52px;
   height: 52px;
   padding: 10px;
-  margin-bottom: 6px;
+  margin: 0 auto 4px;
   background: var(--teal-light);
   border: var(--border-w) solid var(--ink);
   border-radius: var(--radius);
@@ -531,7 +533,14 @@ a {
 .skill-card p {
   font-size: 14.5px;
   color: var(--ink-soft);
-  flex-grow: 1;
+  max-width: 18ch;
+  margin: 0 auto;
+  line-height: 1.45;
+}
+
+/* Barrinhas escondidas por enquanto — reativar removendo display: none */
+.skill-card .xp-bar {
+  display: none;
 }
 
 .xp-bar {
