@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Felipe Martelo — Game Developer, portfolio interativo e site profissional.">
+  <meta name="description" content="Felipe Martelo — Game Developer, portfolio e site profissional.">
   <meta name="theme-color" content="#0f0f12">
   <title>Felipe Martelo</title>
   <link rel="icon" href="/assets/img/MeHead-icon-64.png" type="image/png" sizes="64x64">
@@ -30,24 +30,14 @@
     (function () {
       var params = new URLSearchParams(window.location.search);
 
-      if (params.get("site") === "1") {
-        window.location.replace("/site/");
-        return;
-      }
-
+      // Jogo ainda em desenvolvimento — site é a entrada principal.
+      // Use /?game=1 para forçar o portfolio interativo.
       if (params.get("game") === "1") {
         window.location.replace("/game/");
         return;
       }
 
-      var isMobile = window.matchMedia("(max-width: 768px), (pointer: coarse)").matches;
-
-      if (isMobile) {
-        window.location.replace("/site/");
-        return;
-      }
-
-      window.location.replace("/game/");
+      window.location.replace("/site/");
     })();
   </script>
 </head>
@@ -55,9 +45,9 @@
   <div class="gate">
     <p>Carregando…</p>
     <p>
-      <a href="/game/">Portfolio interativo</a>
-      ·
       <a href="/site/">Site</a>
+      ·
+      <a href="/game/">Portfolio interativo</a>
     </p>
   </div>
 </body>
