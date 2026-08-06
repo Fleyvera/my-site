@@ -536,6 +536,15 @@ a {
   max-width: 18ch;
   margin: 0 auto;
   line-height: 1.45;
+  flex-grow: 1;
+}
+
+.skill-card__link {
+  font-family: var(--font-pixel);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--teal-dark);
+  margin-top: 4px;
 }
 
 /* Barrinhas escondidas por enquanto — reativar removendo display: none */
