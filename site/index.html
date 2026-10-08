@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Felipe Martelo — Game Developer, Professor de Game Dev & UX/UI, artista digital. Jogos, interfaces e pixel art.">
+  <meta name="description" content="Felipe Martelo, Game Developer, professor de Game Dev e UX/UI e artista digital. Jogos, interfaces e pixel art.">
   <meta name="theme-color" content="#f7efdf">
-  <title>Felipe Martelo — Game Dev & Artist</title>
+  <title>Felipe Martelo | Game Dev & Artist</title>
   <link rel="icon" href="/assets/img/MeHead-icon-64.png" type="image/png" sizes="64x64">
   <link rel="icon" href="/assets/img/MeHead-icon-48.png" type="image/png" sizes="48x48">
   <link rel="icon" href="/assets/img/MeHead-icon.png" type="image/png" sizes="32x32">
@@ -95,7 +95,7 @@
         <header class="section__header">
           <span class="section__number section__number--teal">01</span>
           <h2 class="section__title" data-i18n="skills.title">Especialidades</h2>
-          <p class="section__desc" data-i18n="skills.desc">O que eu faço de melhor — na prática e na sala de aula.</p>
+          <p class="section__desc" data-i18n="skills.desc">O que eu faço de melhor, na prática e na sala de aula.</p>
         </header>
         <div class="skills-grid">
           <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="skill-card">
@@ -152,23 +152,42 @@
         <header class="section__header">
           <span class="section__number section__number--coral">02</span>
           <h2 class="section__title" data-i18n="work.title">Trabalhos</h2>
-          <p class="section__desc" data-i18n="work.desc">Jogos que desenvolvi — do estúdio às game jams.</p>
+          <p class="section__desc" data-i18n="work.desc">Jogos que desenvolvi em estúdio e em game jams.</p>
         </header>
 
-        <a href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank" rel="noopener" class="game-feature">
-          <div class="game-feature__cover">
-            <img src="/assets/img/games/born-again.jpg" alt="Born Again — capa na Steam" data-i18n-attr="alt:work.ba.alt" width="460" height="215" loading="lazy">
+        <article class="game-feature">
+          <div class="game-feature__media" id="born-again-media" data-youtube="pe0M6ywKjHw" data-trailer-title="Trailer de Born Again" data-i18n-attr="data-trailer-title:work.ba.iframe">
+            <video class="game-feature__video" autoplay muted loop playsinline preload="metadata" poster="/assets/img/games/born-again-poster.jpg" aria-hidden="true">
+              <source src="/assets/video/born-again-loop.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="game-feature__play" data-trailer="born-again-media" aria-label="Assistir trailer de Born Again com som" data-i18n-attr="aria-label:work.ba.play.aria">
+              <span class="game-feature__play-icon" aria-hidden="true">&#9654;</span>
+              <span data-i18n="work.ba.trailer">Assistir trailer</span>
+            </button>
           </div>
           <div class="game-feature__body">
             <div class="game-feature__tags">
-              <span class="chip chip--yellow">Steam</span>
+              <span class="chip chip--yellow">
+                <svg class="chip__icon" aria-hidden="true"><use href="/assets/icons/steam.svg#steam"></use></svg>
+                Steam
+              </span>
+              <span class="chip chip--teal">Free to play</span>
               <span class="chip chip--coral">Unnamed Studios</span>
             </div>
             <h3>Born Again</h3>
             <p data-i18n="work.ba.desc">MMORPG roguelike com morte permanente e pixel art. Free to play na Steam, desenvolvido na Unnamed Studios.</p>
-            <span class="work-card__link" data-i18n="work.ba.link">Ver na Steam &rarr;</span>
+            <div class="game-feature__actions">
+              <a href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank" rel="noopener" class="btn btn--primary">
+                <svg class="btn__icon" aria-hidden="true"><use href="/assets/icons/steam.svg#steam"></use></svg>
+                <span data-i18n="work.ba.steam">Ver na Steam</span>
+              </a>
+              <button type="button" class="btn" data-trailer="born-again-media">
+                <span aria-hidden="true">&#9654;</span>
+                <span data-i18n="work.ba.trailer">Assistir trailer</span>
+              </button>
+            </div>
           </div>
-        </a>
+        </article>
 
         <div class="games-grid">
           <a href="https://felipemartelo.itch.io/projeto-m" target="_blank" rel="noopener" class="game-card">
@@ -237,7 +256,7 @@
                 <h3>UniFECAF</h3>
                 <span class="chip chip--teal" data-i18n="exp.fecaf.chip">Professor · Game Dev &amp; UX/UI</span>
               </div>
-              <p data-i18n="exp.fecaf.desc">Centro Universitário FECAF — leciono Game Development e UX/UI, unindo teoria, protótipo e prática para formar devs de jogos.</p>
+              <p data-i18n="exp.fecaf.desc">No Centro Universitário FECAF, leciono Game Development e UX/UI unindo teoria, protótipo e prática para formar devs de jogos.</p>
               <a href="https://www.unifecaf.com.br/" target="_blank" rel="noopener" class="experience-card__link">unifecaf.com.br &rarr;</a>
             </div>
           </article>
@@ -303,7 +322,7 @@
                 <img src="/assets/icons/pixel/map-pin.svg" alt="" class="contact-info__icon">
                 <div>
                   <span class="contact-info__label" data-i18n="contact.location.label">Localização</span>
-                  <p data-i18n="contact.location">São Paulo, SP — Brasil</p>
+                  <p data-i18n="contact.location">São Paulo, SP, Brasil</p>
                 </div>
               </div>
               <div class="contact-info__item">

@@ -6,8 +6,8 @@
 
   // O HTML é escrito em português; o dicionário PT é lido do próprio DOM.
   var en = {
-    'meta.title': 'Felipe Martelo — Game Dev & Artist',
-    'meta.desc': 'Felipe Martelo — Game Developer, Game Dev & UX/UI teacher, digital artist. Games, interfaces and pixel art.',
+    'meta.title': 'Felipe Martelo | Game Dev & Artist',
+    'meta.desc': 'Felipe Martelo, Game Developer, Game Dev and UX/UI teacher and digital artist. Games, interfaces and pixel art.',
 
     'nav.aria': 'Main navigation',
     'nav.home': 'Home',
@@ -28,7 +28,7 @@
     'hero.work': 'See my work',
 
     'skills.title': 'Skills',
-    'skills.desc': 'What I do best — in practice and in the classroom.',
+    'skills.desc': 'What I do best, both in practice and in the classroom.',
     'skills.gamedev.desc': 'Indie games from concept to build',
     'skills.ux.desc': 'Interfaces, flows and player experience',
     'skills.ux.link': 'See experience →',
@@ -37,10 +37,12 @@
     'skills.3d.desc': '3D modeling and rendering',
 
     'work.title': 'Work',
-    'work.desc': "Games I've developed — from the studio to game jams.",
-    'work.ba.alt': 'Born Again — Steam cover',
+    'work.desc': "Games I've made at a studio and in game jams.",
     'work.ba.desc': 'Roguelike MMORPG with permadeath and pixel art. Free to play on Steam, developed at Unnamed Studios.',
-    'work.ba.link': 'View on Steam →',
+    'work.ba.steam': 'View on Steam',
+    'work.ba.trailer': 'Watch trailer',
+    'work.ba.play.aria': 'Watch the Born Again trailer with sound',
+    'work.ba.iframe': 'Born Again trailer',
     'work.play': 'Play on itch.io →',
     'work.pm.desc': 'Pixel art adventure made with Godot, playable in the browser.',
     'work.bd.desc': 'Fast, challenging platformer starring a very hurried bee.',
@@ -52,7 +54,7 @@
     'exp.title': 'Experience',
     'exp.desc': "Institutions and companies I've worked with.",
     'exp.fecaf.chip': 'Teacher · Game Dev & UX/UI',
-    'exp.fecaf.desc': 'FECAF University Center — I teach Game Development and UX/UI, combining theory, prototyping and practice to train game developers.',
+    'exp.fecaf.desc': 'At FECAF University Center, I teach Game Development and UX/UI, combining theory, prototyping and practice to train game developers.',
     'exp.unnamed.desc': 'Game development and creative production at an independent studio.',
     'exp.avenues.chip': 'Education',
     'exp.avenues.desc': 'Work in an international educational environment focused on technology and creativity.',
@@ -63,7 +65,7 @@
     'contact.desc': "Let's talk about projects, collaborations or opportunities.",
     'contact.text': "Liked what you saw here? Let's talk about projects, collaborations or opportunities. Just pick an option below!",
     'contact.location.label': 'Location',
-    'contact.location': 'São Paulo, SP — Brazil',
+    'contact.location': 'São Paulo, SP, Brazil',
     'contact.email.label': 'Email',
 
     'footer.text': '© 2026 Felipe Martelo · Game Dev, UX/UI & pixel art.',

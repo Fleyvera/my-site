@@ -47,4 +47,34 @@
 
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('.game-feature__video').forEach(function (video) {
+    if (reduceMotion) {
+      video.removeAttribute('autoplay');
+      video.pause();
+    }
+  });
+
+  document.querySelectorAll('[data-trailer]').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var media = document.getElementById(trigger.getAttribute('data-trailer'));
+      if (!media || media.classList.contains('is-playing')) return;
+
+      var video = media.querySelector('video');
+      if (video) video.pause();
+
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + media.getAttribute('data-youtube') +
+        '?autoplay=1&rel=0&playsinline=1';
+      iframe.title = media.getAttribute('data-trailer-title') || 'Trailer';
+      iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      iframe.allowFullscreen = true;
+
+      media.appendChild(iframe);
+      media.classList.add('is-playing');
+      media.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+    });
+  });
 })();
