@@ -245,6 +245,45 @@ a {
   transform: translateY(-4px) rotate(-45deg);
 }
 
+.lang-toggle {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 3px;
+  background: var(--card);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 2px 2px 0 rgba(46, 36, 51, 0.85);
+}
+
+.lang-toggle button {
+  min-width: 38px;
+  min-height: 34px;
+  padding: 0 8px;
+  font-family: var(--font-pixel);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition);
+}
+
+.lang-toggle button:hover {
+  color: var(--ink);
+}
+
+.lang-toggle button[aria-pressed="true"] {
+  color: #fffaf0;
+  background: var(--teal);
+}
+
+.lang-toggle button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+
 /* ==========================================================================
    Hero
    ========================================================================== */
@@ -659,6 +698,159 @@ a {
   color: var(--teal-dark);
 }
 
+.game-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  margin-bottom: 24px;
+  background: var(--card);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hard-sm);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.game-feature:hover,
+.game-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.game-feature__cover {
+  border-right: var(--border-w) solid var(--ink);
+  background: var(--ink);
+}
+
+.game-feature__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-feature__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 28px 30px;
+}
+
+.game-feature__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.game-feature__body h3 {
+  font-family: var(--font-pixel);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.game-feature__body p {
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-hard-sm);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.game-card__cover {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: var(--border-w) solid var(--ink);
+  background: var(--ink);
+}
+
+.game-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 18px 18px 20px;
+}
+
+.game-card__body h3 {
+  font-family: var(--font-pixel);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.game-card__body p {
+  flex: 1;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+}
+
+.game-card--more {
+  background: var(--teal);
+  color: #fffaf0;
+}
+
+.game-card--more .game-card__body p {
+  color: rgba(255, 250, 240, 0.85);
+}
+
+.game-card--more .work-card__link {
+  color: var(--yellow-light);
+}
+
+.game-card__more-icon {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  border-bottom: var(--border-w) solid var(--ink);
+  background: var(--teal-dark);
+}
+
+.game-card__more-icon img {
+  width: 64px;
+  height: 64px;
+  padding: 12px;
+  background: var(--paper);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius);
+}
+
+.work-extra {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+
+.work-extra a {
+  font-family: var(--font-pixel);
+  font-weight: 500;
+  color: var(--teal-dark);
+}
+
+.work-extra a:hover {
+  text-decoration: underline;
+}
+
 /* ==========================================================================
    Experiência
    ========================================================================== */
@@ -962,6 +1154,10 @@ a {
   .dialog__grid {
     grid-template-columns: 1fr;
   }
+
+  .games-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 760px) {
@@ -970,8 +1166,19 @@ a {
     display: none;
   }
 
+  .header__inner {
+    gap: 12px;
+  }
+
+  .header__logo {
+    white-space: nowrap;
+  }
+
   .header__toggle {
     display: flex;
+  }
+
+  .lang-toggle {
     margin-left: auto;
   }
 
@@ -1011,5 +1218,28 @@ a {
 
   .dialog {
     padding: 30px 22px 40px;
+  }
+
+  .game-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .game-feature__cover {
+    border-right: 0;
+    border-bottom: var(--border-w) solid var(--ink);
+  }
+
+  .game-feature__body {
+    padding: 22px 20px 24px;
+  }
+
+  .game-feature__body h3 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .games-grid {
+    grid-template-columns: 1fr;
   }
 }

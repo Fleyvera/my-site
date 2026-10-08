@@ -23,16 +23,20 @@
         <img src="/assets/img/MeHead.png" alt="" width="32" height="32" class="header__logo-face">
         <span>Felipe Martelo</span>
       </a>
-      <nav class="header__nav" id="nav" aria-label="Navegação principal">
-        <a href="#home">Início</a>
-        <a href="#skills">Especialidades</a>
-        <a href="#work">Trabalhos</a>
-        <a href="#experience">Experiência</a>
-        <a href="#contact">Contato</a>
-        <a href="/game/">Jogo</a>
+      <nav class="header__nav" id="nav" aria-label="Navegação principal" data-i18n-attr="aria-label:nav.aria">
+        <a href="#home" data-i18n="nav.home">Início</a>
+        <a href="#skills" data-i18n="nav.skills">Especialidades</a>
+        <a href="#work" data-i18n="nav.work">Trabalhos</a>
+        <a href="#experience" data-i18n="nav.experience">Experiência</a>
+        <a href="#contact" data-i18n="nav.contact">Contato</a>
+        <a href="/game/" data-i18n="nav.game">Jogo</a>
       </nav>
-      <a href="#contact" class="btn btn--sm header__cta">Fale comigo</a>
-      <button class="header__toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <div class="lang-toggle" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.aria">
+        <button type="button" data-lang="pt" aria-pressed="true" lang="pt-BR">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      </div>
+      <a href="#contact" class="btn btn--sm header__cta" data-i18n="nav.cta">Fale comigo</a>
+      <button class="header__toggle" id="menu-toggle" aria-label="Abrir menu" data-i18n-attr="aria-label:nav.menu" aria-expanded="false">
         <span></span>
         <span></span>
       </button>
@@ -43,23 +47,23 @@
     <section class="hero" id="home">
       <div class="container hero__grid">
         <div class="hero__content">
-          <p class="hero__label">Game Developer · Professor · UX/UI</p>
+          <p class="hero__label" data-i18n="hero.label">Game Developer · Professor · UX/UI</p>
           <h1 class="hero__title">
-            <span class="hero__title-intro">Olá, sou</span>
+            <span class="hero__title-intro" data-i18n="hero.intro">Olá, sou</span>
             Felipe<br>Martelo
           </h1>
-          <p class="hero__text">
+          <p class="hero__text" data-i18n="hero.text">
             Faço jogos, crio interfaces, trabalho com pixel art e ensino
             Game Development e UX/UI na universidade.
           </p>
           <div class="hero__roles">
             <span class="chip chip--teal">Game Dev</span>
-            <span class="chip chip--coral">Professor</span>
+            <span class="chip chip--coral" data-i18n="hero.chip.teacher">Professor</span>
             <span class="chip chip--yellow">UX/UI</span>
           </div>
           <div class="hero__actions">
-            <a href="/game/" class="btn btn--primary" id="play-game-link">&#9654; Jogar portfolio</a>
-            <a href="#work" class="btn">Ver trabalhos</a>
+            <a href="/game/" class="btn btn--primary" id="play-game-link" data-i18n="hero.play">&#9654; Jogar portfolio</a>
+            <a href="#work" class="btn" data-i18n="hero.work">Ver trabalhos</a>
             <a href="https://www.linkedin.com/in/felipemartelo/" target="_blank" rel="noopener" class="btn">LinkedIn</a>
           </div>
         </div>
@@ -90,8 +94,8 @@
       <div class="container">
         <header class="section__header">
           <span class="section__number section__number--teal">01</span>
-          <h2 class="section__title">Especialidades</h2>
-          <p class="section__desc">O que eu faço de melhor — na prática e na sala de aula.</p>
+          <h2 class="section__title" data-i18n="skills.title">Especialidades</h2>
+          <p class="section__desc" data-i18n="skills.desc">O que eu faço de melhor — na prática e na sala de aula.</p>
         </header>
         <div class="skills-grid">
           <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="skill-card">
@@ -99,7 +103,7 @@
               <img src="/assets/icons/pixel/gamepad.svg" alt="">
             </div>
             <h3>Game Dev</h3>
-            <p>Jogos indie do conceito ao build</p>
+            <p data-i18n="skills.gamedev.desc">Jogos indie do conceito ao build</p>
             <span class="skill-card__link">felipemartelo.itch.io &rarr;</span>
             <span class="xp-bar xp-bar--max" aria-hidden="true"><span style="width: 100%"></span></span>
           </a>
@@ -108,8 +112,8 @@
               <img src="/assets/icons/pixel/window-frame.svg" alt="">
             </div>
             <h3>UX/UI</h3>
-            <p>Interfaces, fluxos e experiência do jogador</p>
-            <span class="skill-card__link">Ver experiência &rarr;</span>
+            <p data-i18n="skills.ux.desc">Interfaces, fluxos e experiência do jogador</p>
+            <span class="skill-card__link" data-i18n="skills.ux.link">Ver experiência &rarr;</span>
             <span class="xp-bar" aria-hidden="true"><span style="width: 92%"></span></span>
           </a>
           <a href="https://felipemartelo.artstation.com/albums/12506630" target="_blank" rel="noopener" class="skill-card">
@@ -117,7 +121,7 @@
               <img src="/assets/icons/pixel/brush.svg" alt="">
             </div>
             <h3>2D Artist</h3>
-            <p>Ilustração e arte digital</p>
+            <p data-i18n="skills.2d.desc">Ilustração e arte digital</p>
             <span class="skill-card__link">artstation.com &rarr;</span>
             <span class="xp-bar" aria-hidden="true"><span style="width: 88%"></span></span>
           </a>
@@ -126,7 +130,7 @@
               <img src="/assets/icons/pixel/grid-3x3.svg" alt="">
             </div>
             <h3>Pixel Artist</h3>
-            <p>Arte em pixel e sprites</p>
+            <p data-i18n="skills.pixel.desc">Arte em pixel e sprites</p>
             <span class="skill-card__link">artstation.com &rarr;</span>
             <span class="xp-bar xp-bar--max" aria-hidden="true"><span style="width: 100%"></span></span>
           </a>
@@ -135,7 +139,7 @@
               <img src="/assets/icons/pixel/box.svg" alt="">
             </div>
             <h3>3D Artist</h3>
-            <p>Modelagem e renderização 3D</p>
+            <p data-i18n="skills.3d.desc">Modelagem e renderização 3D</p>
             <span class="skill-card__link">artstation.com &rarr;</span>
             <span class="xp-bar" aria-hidden="true"><span style="width: 85%"></span></span>
           </a>
@@ -147,51 +151,72 @@
       <div class="container">
         <header class="section__header">
           <span class="section__number section__number--coral">02</span>
-          <h2 class="section__title">Trabalhos</h2>
-          <p class="section__desc">Onde você encontra meus projetos e portfólios.</p>
+          <h2 class="section__title" data-i18n="work.title">Trabalhos</h2>
+          <p class="section__desc" data-i18n="work.desc">Jogos que desenvolvi — do estúdio às game jams.</p>
         </header>
-        <div class="work-grid">
-          <a href="/game/" class="work-card work-card--featured">
-            <div class="work-card__icon">
-              <img src="/assets/icons/pixel/gamepad.svg" alt="">
+
+        <a href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank" rel="noopener" class="game-feature">
+          <div class="game-feature__cover">
+            <img src="/assets/img/games/born-again.jpg" alt="Born Again — capa na Steam" data-i18n-attr="alt:work.ba.alt" width="460" height="215" loading="lazy">
+          </div>
+          <div class="game-feature__body">
+            <div class="game-feature__tags">
+              <span class="chip chip--yellow">Steam</span>
+              <span class="chip chip--coral">Unnamed Studios</span>
             </div>
-            <div class="work-card__body">
-              <h3>Portfolio interativo</h3>
-              <p>Um mini-mundo pixel art para explorar meu trabalho.</p>
-              <span class="work-card__link">Jogar no desktop &rarr;</span>
+            <h3>Born Again</h3>
+            <p data-i18n="work.ba.desc">MMORPG roguelike com morte permanente e pixel art. Free to play na Steam, desenvolvido na Unnamed Studios.</p>
+            <span class="work-card__link" data-i18n="work.ba.link">Ver na Steam &rarr;</span>
+          </div>
+        </a>
+
+        <div class="games-grid">
+          <a href="https://felipemartelo.itch.io/projeto-m" target="_blank" rel="noopener" class="game-card">
+            <div class="game-card__cover">
+              <img src="/assets/img/games/projeto-m.png" alt="Projeto M" loading="lazy" class="pixelated">
+            </div>
+            <div class="game-card__body">
+              <h3>Projeto M</h3>
+              <p data-i18n="work.pm.desc">Aventura pixel art feita na Godot, jogável no navegador.</p>
+              <span class="work-card__link" data-i18n="work.play">Jogar no itch.io &rarr;</span>
             </div>
           </a>
-          <a href="https://github.com/Fleyvera" target="_blank" rel="noopener" class="work-card">
-            <div class="work-card__icon">
-              <img src="/assets/icons/pixel/script.svg" alt="">
+          <a href="https://felipemartelo.itch.io/bee-dash" target="_blank" rel="noopener" class="game-card">
+            <div class="game-card__cover">
+              <img src="/assets/img/games/bee-dash.png" alt="Bee Dash" loading="lazy" class="pixelated">
             </div>
-            <div class="work-card__body">
-              <h3>Código</h3>
-              <p>Projetos open source e repositórios no GitHub.</p>
-              <span class="work-card__link">github.com/Fleyvera &rarr;</span>
+            <div class="game-card__body">
+              <h3>Bee Dash</h3>
+              <p data-i18n="work.bd.desc">Jogo de plataforma rápido e desafiador com uma abelha muito apressada.</p>
+              <span class="work-card__link" data-i18n="work.play">Jogar no itch.io &rarr;</span>
             </div>
           </a>
-          <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="work-card">
-            <div class="work-card__icon">
+          <a href="https://felipemartelo.itch.io/moleculation" target="_blank" rel="noopener" class="game-card">
+            <div class="game-card__cover">
+              <img src="/assets/img/games/moleculation.png" alt="Moleculation" loading="lazy">
+            </div>
+            <div class="game-card__body">
+              <h3>Moleculation</h3>
+              <p data-i18n="work.mo.desc">Jogo arcade criado para a Kenney Jam 2022.</p>
+              <span class="work-card__link" data-i18n="work.play">Jogar no itch.io &rarr;</span>
+            </div>
+          </a>
+          <a href="https://felipemartelo.itch.io/" target="_blank" rel="noopener" class="game-card game-card--more">
+            <div class="game-card__more-icon">
               <img src="/assets/icons/pixel/gamepad.svg" alt="">
             </div>
-            <div class="work-card__body">
-              <h3>Jogos</h3>
-              <p>Jogos independentes publicados no itch.io.</p>
+            <div class="game-card__body">
+              <h3 data-i18n="work.more.title">Ver todos os jogos</h3>
+              <p data-i18n="work.more.desc">Game jams, protótipos e packs de assets no meu itch.io.</p>
               <span class="work-card__link">felipemartelo.itch.io &rarr;</span>
             </div>
           </a>
-          <a href="https://felipemartelo.artstation.com/projects" target="_blank" rel="noopener" class="work-card">
-            <div class="work-card__icon">
-              <img src="/assets/icons/pixel/brush.svg" alt="">
-            </div>
-            <div class="work-card__body">
-              <h3>Arte</h3>
-              <p>Portfólio visual completo no ArtStation.</p>
-              <span class="work-card__link">artstation.com &rarr;</span>
-            </div>
-          </a>
         </div>
+
+        <p class="work-extra">
+          <span data-i18n="work.github">Também tem código no</span>
+          <a href="https://github.com/Fleyvera" target="_blank" rel="noopener">GitHub &rarr;</a>
+        </p>
       </div>
     </section>
 
@@ -199,8 +224,8 @@
       <div class="container">
         <header class="section__header">
           <span class="section__number section__number--yellow">03</span>
-          <h2 class="section__title">Experiência</h2>
-          <p class="section__desc">Instituições e empresas com as quais colaborei.</p>
+          <h2 class="section__title" data-i18n="exp.title">Experiência</h2>
+          <p class="section__desc" data-i18n="exp.desc">Instituições e empresas com as quais colaborei.</p>
         </header>
         <div class="experience-list">
           <article class="experience-card">
@@ -210,9 +235,9 @@
             <div class="experience-card__content">
               <div class="experience-card__meta">
                 <h3>UniFECAF</h3>
-                <span class="chip chip--teal">Professor · Game Dev &amp; UX/UI</span>
+                <span class="chip chip--teal" data-i18n="exp.fecaf.chip">Professor · Game Dev &amp; UX/UI</span>
               </div>
-              <p>Centro Universitário FECAF — leciono Game Development e UX/UI, unindo teoria, protótipo e prática para formar devs de jogos.</p>
+              <p data-i18n="exp.fecaf.desc">Centro Universitário FECAF — leciono Game Development e UX/UI, unindo teoria, protótipo e prática para formar devs de jogos.</p>
               <a href="https://www.unifecaf.com.br/" target="_blank" rel="noopener" class="experience-card__link">unifecaf.com.br &rarr;</a>
             </div>
           </article>
@@ -225,7 +250,7 @@
                 <h3>Unnamed Studios</h3>
                 <span class="chip chip--coral">Game Studio</span>
               </div>
-              <p>Desenvolvimento de jogos e produção criativa em estúdio independente.</p>
+              <p data-i18n="exp.unnamed.desc">Desenvolvimento de jogos e produção criativa em estúdio independente.</p>
               <a href="https://unnamedstudios.co/" target="_blank" rel="noopener" class="experience-card__link">unnamedstudios.co &rarr;</a>
             </div>
           </article>
@@ -236,9 +261,9 @@
             <div class="experience-card__content">
               <div class="experience-card__meta">
                 <h3>Avenues</h3>
-                <span class="chip chip--yellow">Educação</span>
+                <span class="chip chip--yellow" data-i18n="exp.avenues.chip">Educação</span>
               </div>
-              <p>Atuação em ambiente educacional internacional com foco em tecnologia e criatividade.</p>
+              <p data-i18n="exp.avenues.desc">Atuação em ambiente educacional internacional com foco em tecnologia e criatividade.</p>
               <a href="https://www.avenues.org/pt/sp/" target="_blank" rel="noopener" class="experience-card__link">avenues.org &rarr;</a>
             </div>
           </article>
@@ -249,9 +274,9 @@
             <div class="experience-card__content">
               <div class="experience-card__meta">
                 <h3>SuperGeeks</h3>
-                <span class="chip chip--pink">Tecnologia</span>
+                <span class="chip chip--pink" data-i18n="exp.sg.chip">Tecnologia</span>
               </div>
-              <p>Ensino de programação e tecnologia para jovens em escola de coding.</p>
+              <p data-i18n="exp.sg.desc">Ensino de programação e tecnologia para jovens em escola de coding.</p>
               <a href="https://supergeeks.com.br/" target="_blank" rel="noopener" class="experience-card__link">supergeeks.com.br &rarr;</a>
             </div>
           </article>
@@ -263,12 +288,12 @@
       <div class="container">
         <header class="section__header">
           <span class="section__number section__number--pink">04</span>
-          <h2 class="section__title">Contato</h2>
-          <p class="section__desc">Vamos conversar sobre projetos, colaborações ou oportunidades.</p>
+          <h2 class="section__title" data-i18n="contact.title">Contato</h2>
+          <p class="section__desc" data-i18n="contact.desc">Vamos conversar sobre projetos, colaborações ou oportunidades.</p>
         </header>
         <div class="dialog">
           <span class="dialog__name">Felipe Martelo</span>
-          <p class="dialog__text">
+          <p class="dialog__text" data-i18n="contact.text">
             Curtiu o que viu por aqui? Vamos conversar sobre projetos,
             colaborações ou oportunidades. É só escolher uma opção abaixo!
           </p>
@@ -277,14 +302,14 @@
               <div class="contact-info__item">
                 <img src="/assets/icons/pixel/map-pin.svg" alt="" class="contact-info__icon">
                 <div>
-                  <span class="contact-info__label">Localização</span>
-                  <p>São Paulo, SP — Brasil</p>
+                  <span class="contact-info__label" data-i18n="contact.location.label">Localização</span>
+                  <p data-i18n="contact.location">São Paulo, SP — Brasil</p>
                 </div>
               </div>
               <div class="contact-info__item">
                 <img src="/assets/icons/pixel/mail.svg" alt="" class="contact-info__icon">
                 <div>
-                  <span class="contact-info__label">E-mail</span>
+                  <span class="contact-info__label" data-i18n="contact.email.label">E-mail</span>
                   <a href="mailto:fleyva2302@gmail.com">fleyva2302@gmail.com</a>
                 </div>
               </div>
@@ -321,14 +346,15 @@
       </div>
     </div>
     <div class="container footer__inner">
-      <p>&copy; 2026 Felipe Martelo · Game Dev, UX/UI &amp; pixel art.</p>
+      <p data-i18n="footer.text">&copy; 2026 Felipe Martelo · Game Dev, UX/UI &amp; pixel art.</p>
       <div class="footer__links">
-        <a href="/game/">Portfolio interativo</a>
-        <a href="#home">Voltar ao topo &uarr;</a>
+        <a href="/game/" data-i18n="footer.portfolio">Portfolio interativo</a>
+        <a href="#home" data-i18n="footer.top">Voltar ao topo &uarr;</a>
       </div>
     </div>
   </footer>
 
+  <script src="/assets/js/i18n.js"></script>
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/site-mode.js"></script>
 </body>
