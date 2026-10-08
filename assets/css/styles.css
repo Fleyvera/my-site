@@ -735,53 +735,12 @@ a {
   object-fit: cover;
 }
 
-.game-feature__play {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 18px 10px 12px;
-  font-family: var(--font-pixel);
-  font-size: 16px;
-  font-weight: 600;
-  white-space: nowrap;
-  color: var(--ink);
-  background: var(--card);
-  border: var(--border-w) solid var(--ink);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-hard-sm);
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-
-.game-feature__play:hover {
-  transform: translate(calc(-50% - 2px), calc(-50% - 2px));
-  box-shadow: 5px 5px 0 rgba(46, 36, 51, 0.9);
-}
-
-.game-feature__play:focus-visible,
 .game-feature__actions .btn:focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: 2px;
 }
 
-.game-feature__play-icon {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  font-size: 13px;
-  color: #fffaf0;
-  background: var(--coral);
-  border: var(--border-w) solid var(--ink);
-  border-radius: 4px;
-}
-
-.game-feature__media.is-playing .game-feature__video,
-.game-feature__media.is-playing .game-feature__play {
+.game-feature__media.is-playing .game-feature__video {
   display: none;
 }
 

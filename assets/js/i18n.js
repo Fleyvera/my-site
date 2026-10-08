@@ -41,7 +41,6 @@
     'work.ba.desc': 'Roguelike MMORPG with permadeath and pixel art. Free to play on Steam, developed at Unnamed Studios.',
     'work.ba.steam': 'View on Steam',
     'work.ba.trailer': 'Watch trailer',
-    'work.ba.play.aria': 'Watch the Born Again trailer with sound',
     'work.ba.iframe': 'Born Again trailer',
     'work.play': 'Play on itch.io →',
     'work.pm.desc': 'Pixel art adventure made with Godot, playable in the browser.',
